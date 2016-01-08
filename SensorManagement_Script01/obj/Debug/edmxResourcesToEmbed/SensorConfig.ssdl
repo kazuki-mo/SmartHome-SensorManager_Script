@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SmartHome_SensorConditionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DoorSensor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SensorID" Type="int" />
+    <Property Name="Door" Type="nvarchar(max)" />
+    <Property Name="BatteryExchangeDate" Type="nvarchar(max)" />
+    <Property Name="LatestUploadDate" Type="nvarchar(max)" />
+    <Property Name="BaseStationName" Type="nvarchar(max)" />
+    <Property Name="Detail" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="EnvironmentSensor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SensorID" Type="int" />
+    <Property Name="Position" Type="nvarchar(max)" />
+    <Property Name="BatteryExchangeDate" Type="nvarchar(max)" />
+    <Property Name="LatestUploadDate_Temp" Type="nvarchar(max)" />
+    <Property Name="LatestUploadDate_Humi" Type="nvarchar(max)" />
+    <Property Name="LatestUploadDate_Light" Type="nvarchar(max)" />
+    <Property Name="LatestUploadDate_Human" Type="nvarchar(max)" />
+    <Property Name="UploadCycle_Temp" Type="nvarchar(max)" />
+    <Property Name="UploadCycle_Humi" Type="nvarchar(max)" />
+    <Property Name="UploadCycle_Light" Type="nvarchar(max)" />
+    <Property Name="UplloadCycle_Human" Type="nvarchar(max)" />
+    <Property Name="BaseStationName" Type="nvarchar(max)" />
+    <Property Name="Detail" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PositionSensor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SensorID" Type="int" />
+    <Property Name="LatestUploadDate" Type="nvarchar(max)" />
+    <Property Name="UploadCycle" Type="nvarchar(max)" />
+    <Property Name="Detail" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PowerSensor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SensorID" Type="int" />
+    <Property Name="ConsumerElectronics" Type="nvarchar(max)" />
+    <Property Name="Type" Type="nvarchar(max)" />
+    <Property Name="LatestUploadDate" Type="nvarchar(max)" />
+    <Property Name="BaseStationName" Type="nvarchar(max)" />
+    <Property Name="UploadCycle" Type="nvarchar(max)" />
+    <Property Name="Detail" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="SmartHome_SensorConditionModelStoreContainer">
+    <EntitySet Name="DoorSensor" EntityType="Self.DoorSensor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EnvironmentSensor" EntityType="Self.EnvironmentSensor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PositionSensor" EntityType="Self.PositionSensor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PowerSensor" EntityType="Self.PowerSensor" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

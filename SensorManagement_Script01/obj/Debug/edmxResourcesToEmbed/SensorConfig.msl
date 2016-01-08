@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SmartHome_SensorConditionModelStoreContainer" CdmEntityContainer="SensorConditionEntities">
+    <EntitySetMapping Name="DoorSensors">
+      <EntityTypeMapping TypeName="SmartHome_SensorConditionModel.DoorSensor">
+        <MappingFragment StoreEntitySet="DoorSensor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SensorID" ColumnName="SensorID" />
+          <ScalarProperty Name="Door" ColumnName="Door" />
+          <ScalarProperty Name="BatteryExchangeDate" ColumnName="BatteryExchangeDate" />
+          <ScalarProperty Name="LatestUploadDate" ColumnName="LatestUploadDate" />
+          <ScalarProperty Name="BaseStationName" ColumnName="BaseStationName" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnvironmentSensors">
+      <EntityTypeMapping TypeName="SmartHome_SensorConditionModel.EnvironmentSensor">
+        <MappingFragment StoreEntitySet="EnvironmentSensor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SensorID" ColumnName="SensorID" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="BatteryExchangeDate" ColumnName="BatteryExchangeDate" />
+          <ScalarProperty Name="LatestUploadDate_Temp" ColumnName="LatestUploadDate_Temp" />
+          <ScalarProperty Name="LatestUploadDate_Humi" ColumnName="LatestUploadDate_Humi" />
+          <ScalarProperty Name="LatestUploadDate_Light" ColumnName="LatestUploadDate_Light" />
+          <ScalarProperty Name="LatestUploadDate_Human" ColumnName="LatestUploadDate_Human" />
+          <ScalarProperty Name="UploadCycle_Temp" ColumnName="UploadCycle_Temp" />
+          <ScalarProperty Name="UploadCycle_Humi" ColumnName="UploadCycle_Humi" />
+          <ScalarProperty Name="UploadCycle_Light" ColumnName="UploadCycle_Light" />
+          <ScalarProperty Name="UplloadCycle_Human" ColumnName="UplloadCycle_Human" />
+          <ScalarProperty Name="BaseStationName" ColumnName="BaseStationName" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PositionSensors">
+      <EntityTypeMapping TypeName="SmartHome_SensorConditionModel.PositionSensor">
+        <MappingFragment StoreEntitySet="PositionSensor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SensorID" ColumnName="SensorID" />
+          <ScalarProperty Name="LatestUploadDate" ColumnName="LatestUploadDate" />
+          <ScalarProperty Name="UploadCycle" ColumnName="UploadCycle" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PowerSensors">
+      <EntityTypeMapping TypeName="SmartHome_SensorConditionModel.PowerSensor">
+        <MappingFragment StoreEntitySet="PowerSensor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SensorID" ColumnName="SensorID" />
+          <ScalarProperty Name="ConsumerElectronics" ColumnName="ConsumerElectronics" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="LatestUploadDate" ColumnName="LatestUploadDate" />
+          <ScalarProperty Name="BaseStationName" ColumnName="BaseStationName" />
+          <ScalarProperty Name="UploadCycle" ColumnName="UploadCycle" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

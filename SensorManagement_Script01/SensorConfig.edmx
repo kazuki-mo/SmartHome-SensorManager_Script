@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SmartHome_SensorConditionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DoorSensor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SensorID" Type="int" />
+          <Property Name="Door" Type="nvarchar(max)" />
+          <Property Name="BatteryExchangeDate" Type="nvarchar(max)" />
+          <Property Name="LatestUploadDate" Type="nvarchar(max)" />
+          <Property Name="BaseStationName" Type="nvarchar(max)" />
+          <Property Name="Detail" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="EnvironmentSensor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SensorID" Type="int" />
+          <Property Name="Position" Type="nvarchar(max)" />
+          <Property Name="BatteryExchangeDate" Type="nvarchar(max)" />
+          <Property Name="LatestUploadDate_Temp" Type="nvarchar(max)" />
+          <Property Name="LatestUploadDate_Humi" Type="nvarchar(max)" />
+          <Property Name="LatestUploadDate_Light" Type="nvarchar(max)" />
+          <Property Name="LatestUploadDate_Human" Type="nvarchar(max)" />
+          <Property Name="UploadCycle_Temp" Type="nvarchar(max)" />
+          <Property Name="UploadCycle_Humi" Type="nvarchar(max)" />
+          <Property Name="UploadCycle_Light" Type="nvarchar(max)" />
+          <Property Name="UplloadCycle_Human" Type="nvarchar(max)" />
+          <Property Name="BaseStationName" Type="nvarchar(max)" />
+          <Property Name="Detail" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PositionSensor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SensorID" Type="int" />
+          <Property Name="LatestUploadDate" Type="nvarchar(max)" />
+          <Property Name="UploadCycle" Type="nvarchar(max)" />
+          <Property Name="Detail" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PowerSensor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SensorID" Type="int" />
+          <Property Name="ConsumerElectronics" Type="nvarchar(max)" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="LatestUploadDate" Type="nvarchar(max)" />
+          <Property Name="BaseStationName" Type="nvarchar(max)" />
+          <Property Name="UploadCycle" Type="nvarchar(max)" />
+          <Property Name="Detail" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="SmartHome_SensorConditionModelStoreContainer">
+          <EntitySet Name="DoorSensor" EntityType="Self.DoorSensor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EnvironmentSensor" EntityType="Self.EnvironmentSensor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PositionSensor" EntityType="Self.PositionSensor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PowerSensor" EntityType="Self.PowerSensor" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SmartHome_SensorConditionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DoorSensor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SensorID" Type="Int32" />
+          <Property Name="Door" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BatteryExchangeDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LatestUploadDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BaseStationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EnvironmentSensor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SensorID" Type="Int32" />
+          <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BatteryExchangeDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LatestUploadDate_Temp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LatestUploadDate_Humi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LatestUploadDate_Light" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LatestUploadDate_Human" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UploadCycle_Temp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UploadCycle_Humi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UploadCycle_Light" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UplloadCycle_Human" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BaseStationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PositionSensor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SensorID" Type="Int32" />
+          <Property Name="LatestUploadDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UploadCycle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PowerSensor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SensorID" Type="Int32" />
+          <Property Name="ConsumerElectronics" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LatestUploadDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BaseStationName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UploadCycle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="SensorConditionEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DoorSensors" EntityType="Self.DoorSensor" />
+          <EntitySet Name="EnvironmentSensors" EntityType="Self.EnvironmentSensor" />
+          <EntitySet Name="PositionSensors" EntityType="Self.PositionSensor" />
+          <EntitySet Name="PowerSensors" EntityType="Self.PowerSensor" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SmartHome_SensorConditionModelStoreContainer" CdmEntityContainer="SensorConditionEntities">
+          <EntitySetMapping Name="DoorSensors">
+            <EntityTypeMapping TypeName="SmartHome_SensorConditionModel.DoorSensor">
+              <MappingFragment StoreEntitySet="DoorSensor">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SensorID" ColumnName="SensorID" />
+                <ScalarProperty Name="Door" ColumnName="Door" />
+                <ScalarProperty Name="BatteryExchangeDate" ColumnName="BatteryExchangeDate" />
+                <ScalarProperty Name="LatestUploadDate" ColumnName="LatestUploadDate" />
+                <ScalarProperty Name="BaseStationName" ColumnName="BaseStationName" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnvironmentSensors">
+            <EntityTypeMapping TypeName="SmartHome_SensorConditionModel.EnvironmentSensor">
+              <MappingFragment StoreEntitySet="EnvironmentSensor">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SensorID" ColumnName="SensorID" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="BatteryExchangeDate" ColumnName="BatteryExchangeDate" />
+                <ScalarProperty Name="LatestUploadDate_Temp" ColumnName="LatestUploadDate_Temp" />
+                <ScalarProperty Name="LatestUploadDate_Humi" ColumnName="LatestUploadDate_Humi" />
+                <ScalarProperty Name="LatestUploadDate_Light" ColumnName="LatestUploadDate_Light" />
+                <ScalarProperty Name="LatestUploadDate_Human" ColumnName="LatestUploadDate_Human" />
+                <ScalarProperty Name="UploadCycle_Temp" ColumnName="UploadCycle_Temp" />
+                <ScalarProperty Name="UploadCycle_Humi" ColumnName="UploadCycle_Humi" />
+                <ScalarProperty Name="UploadCycle_Light" ColumnName="UploadCycle_Light" />
+                <ScalarProperty Name="UplloadCycle_Human" ColumnName="UplloadCycle_Human" />
+                <ScalarProperty Name="BaseStationName" ColumnName="BaseStationName" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PositionSensors">
+            <EntityTypeMapping TypeName="SmartHome_SensorConditionModel.PositionSensor">
+              <MappingFragment StoreEntitySet="PositionSensor">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SensorID" ColumnName="SensorID" />
+                <ScalarProperty Name="LatestUploadDate" ColumnName="LatestUploadDate" />
+                <ScalarProperty Name="UploadCycle" ColumnName="UploadCycle" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PowerSensors">
+            <EntityTypeMapping TypeName="SmartHome_SensorConditionModel.PowerSensor">
+              <MappingFragment StoreEntitySet="PowerSensor">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SensorID" ColumnName="SensorID" />
+                <ScalarProperty Name="ConsumerElectronics" ColumnName="ConsumerElectronics" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="LatestUploadDate" ColumnName="LatestUploadDate" />
+                <ScalarProperty Name="BaseStationName" ColumnName="BaseStationName" />
+                <ScalarProperty Name="UploadCycle" ColumnName="UploadCycle" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="なし" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
