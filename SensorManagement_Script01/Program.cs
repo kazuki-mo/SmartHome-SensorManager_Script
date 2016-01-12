@@ -67,9 +67,8 @@ namespace SensorManagement_Script01 {
                     }
 
                     foreach (string sensor_id in sensor_ids) {
-                        using (var con = new NpgsqlConnection(connString)) {
+                        var con = new NpgsqlConnection(connString);
                             con.Open();
-
                             /*
                             sensor_type = 1:温度
                              *            2:湿度
@@ -105,13 +104,14 @@ namespace SensorManagement_Script01 {
                                         db.PowerSensors.Where(p => p.SensorID == sensorID).SingleOrDefault().LatestUploadDate = ((DateTime)dataReader["datetime"]).ToString();
                                     }
                                 }
+                                con.Close();
                             } catch {
                                 Console.WriteLine("スルー");
                             }
 
-                            con.Close();
+                            //con.Close();
 
-                        }
+                        
                     }
 
                 }
